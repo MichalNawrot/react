@@ -33,7 +33,7 @@ https://nextjs.org/learn/react-foundations/
 - when iterating over an array React will give us a warning about a missing `key` prop. This is because React needs something to uniquely identify items in an array so it knows which elements to update in the DOM.
 - In React, event names are *camelCased*. The `onClick` event is one of many possible events you can use to respond to user interaction. For example, you can use `onChange` for input fields or `onSubmit` for forms.
 
-### Three core concepts
+### Three core concepts `Components`, `props`, `State`
 
 - Components
   - components are functions that returns UI elements
@@ -46,3 +46,20 @@ https://nextjs.org/learn/react-foundations/
   - You can pass the state information to children components as props, but the **logic for updating the state should be kept within the component** where state was initially created.
   - Hooks allow you to add additional logic such as state to your components.
   - Think of state as any information in your UI that changes over time, usually triggered by user interaction.
+
+### Server and Client Components
+
+To understand how `Server` and `Client Components` work, it's helpful to be familiar with two foundational web concepts:
+
+- The [environments](https://nextjs.org/learn/react-foundations/server-and-client-components#server-and-client-environments) your application code can be executed in: the server and the client.
+  - Behind the scenes, the components are split into two module graphs. The `server module graph` (or tree) contains all the Server Components that are rendered on the server, and the `client module graph` (or tree) contains all Client Components.
+  - The **client** refers to the browser on a user’s device that sends a request to a server for your application code. It then turns the response it receives from the server into an interface the user can interact with.
+  - The **server** refers to the computer in a data center that stores your application code, receives requests from a client, does some computation, and sends back an appropriate response.
+    - After Server Components are rendered, a special data format called the React Server Component Payload (RSC) is sent to the client.
+      - The RSC payload contains:
+        1. The rendered result of Server Components.
+        2. Placeholders (or holes) for where Client Components should be rendered and references to their JavaScript files.
+
+
+- The [network boundary](https://nextjs.org/learn/react-foundations/server-and-client-components#network-boundary) that separates server and client code.
+
