@@ -33,6 +33,11 @@ https://nextjs.org/learn/react-foundations/
 - when iterating over an array React will give us a warning about a missing `key` prop. This is because React needs something to uniquely identify items in an array so it knows which elements to update in the DOM.
 - In React, event names are *camelCased*. The `onClick` event is one of many possible events you can use to respond to user interaction. For example, you can use `onChange` for input fields or `onSubmit` for forms.
 
+#### Rules of JSX
+1. Return a single root element (e.g. using <>...</>)
+2. close all tags (e.g. <br></br>, <hr></hr>, <img />)
+3. use camelCase style (e.g. `className`)
+
 ### Three core concepts `Components`, `props`, `State`
 
 - Components
